@@ -1,0 +1,16 @@
+schools_dat = list(J = 8, y = c(28, 8, -3, 7, -1, 1, 18, 12), sigma = c(15, 10, 16, 11, 9, 11, 10, 18))
+require(rstan)
+fit = stan('convergenceCheck.stan', data = schools_dat, chains=4, iter=100)
+params=extract(fit, permuted=FALSE, inc_warmup=TRUE)
+plot(c(-5,25),c(-5,25),ty='n',xlab='mu',ylab='tau')
+lines(params[,'chain:1','mu'], params[,'chain:1','tau'], col='black', ty='o',pch=20)
+lines(params[,'chain:2','mu'], params[,'chain:1','tau'], col='green', ty='o',pch=20)
+lines(params[,'chain:3','mu'], params[,'chain:1','tau'], col='red', ty='o',pch=20)
+lines(params[,'chain:4','mu'], params[,'chain:1','tau'], col='blue', ty='o',pch=20)
+traceplot(fit, pars=c('mu','tau'))
+neff=summary(fit)$summary[,'n_eff']
+neff/2000 #should be greater than 0.01
+pairs(fit, pars=c('mu','tau','lp__'))
+fit=stan('convergenceCheck.stan', data=schools_dat,chains=4, iter=10000,warmup=500,control=list(adapt_delta=0.85))
+get_num_divergent(fit)
+monitor(extract(fit, permuted=FALSE, inc_warmup=FALSE))
