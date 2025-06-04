@@ -14,11 +14,11 @@ This project was developed using [RStan](https://mc-stan.org/users/interfaces/rs
 - RStudio IDE
 - Windows 10
 
-#How to use
+### How to use
 
 Run the R scripts corresponding to a stan file. So for example run stageOneBiggerDataset.R .The R script runs the stan model.
 
-#What I learned
+### What I learned
 
 R programming language,
 Bayesian statistics,
