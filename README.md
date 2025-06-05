@@ -20,10 +20,11 @@ Run the R scripts corresponding to a stan file. So for example run stageOneBigge
 
 ### What I learned
 
-R programming language,
-Bayesian statistics,
-Stan,
-MCMC algorithm
+- R programming language  
+- Bayesian statistics  
+- Stan (probabilistic programming language)  
+- Markov Chain Monte Carlo (MCMC) algorithm  
+
 
 
 
