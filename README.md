@@ -4,7 +4,7 @@ This project is my final year project and it explores Bayesian techniques for de
 
 ## Requirements
 
-This project was developed using [RStan](https://mc-stan.org/users/interfaces/rstan), the R interface to the Stan probabilistic programming language.
+This project was developed using [RStan](https://mc-stan.org/users/interfaces/rstan), the R interface to the Stan probabilistic programming language. Python was used to generate the synthetic datasets.
 
 ### R Environment
 
